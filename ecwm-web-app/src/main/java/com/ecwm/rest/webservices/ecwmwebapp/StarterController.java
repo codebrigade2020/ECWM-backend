@@ -1,15 +1,18 @@
 package com.ecwm.rest.webservices.ecwmwebapp;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecwm.rest.webservices.ecwmwebapp.bean.StarterBean;
+
 @RestController
 public class StarterController {
 	
 	//Testing Method 1
-	@RequestMapping(method=RequestMethod.GET, path= "/home")
+	@GetMapping(path= "/home")
 	public String starterMessage() {
 		return "App is up and running";
 	}
@@ -22,6 +25,12 @@ public class StarterController {
 		return "Login Success";
 		else
 		return "Login Failure";
+	}
+	
+	//Testing Method 3
+	@GetMapping(path = "/message/{message}")
+	public StarterBean message(@PathVariable String message) {
+		return new StarterBean(message);
 	}
 	
 

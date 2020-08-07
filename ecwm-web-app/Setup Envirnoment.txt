@@ -1,3 +1,5 @@
+Install Eclipse Java Enterprise edition IDE
+Install JDK 11
 Open Eclipse
 Click File->Import
 Type Git in the box
