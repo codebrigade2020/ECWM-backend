@@ -1,0 +1,21 @@
+Open Eclipse
+Click File->Import
+Type Git in the box
+Then Select Projects from Git
+Click next
+Click clone URI
+Click next
+Enter the URI - https://github.com/codebrigade2020/ECWM-backend.git
+Enter your github username and password
+Select store in Secure store
+Click next and then next 
+Give a remote name and choose a directory path where you want the local repository.
+Click next
+Select Import using New project wizard
+Then click finish
+A popup opens . Type maven in it.
+Select Checkout Maven Projects from SCM
+Click next
+Enter the URI - https://github.com/codebrigade2020/ECWM-backend.git
+Click next and finish
+You will get a popup. Select the project and click finish
