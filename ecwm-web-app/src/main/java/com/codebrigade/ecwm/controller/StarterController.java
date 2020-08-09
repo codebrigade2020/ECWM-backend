@@ -1,4 +1,4 @@
-package com.ecwm.rest.webservices.ecwmwebapp;
+package com.codebrigade.ecwm.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ecwm.rest.webservices.ecwmwebapp.bean.StarterBean;
+import com.codebrigade.ecwm.bean.StarterBean;
 
 @RestController
 public class StarterController {
