@@ -1,4 +1,4 @@
-package com.ecwm.rest.webservices.ecwmwebapp;
+package com.codebrigade.ecwm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

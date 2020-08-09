@@ -1,4 +1,4 @@
-package com.ecwm.rest.webservices.ecwmwebapp.bean;
+package com.codebrigade.ecwm.bean;
 
 public class StarterBean {
 

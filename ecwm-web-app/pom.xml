@@ -1,44 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.0-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.3.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ecwm.rest.webservices</groupId>
-	<artifactId>ecwm-web-app</artifactId>
+	<groupId>com.codebrigade</groupId>
+	<artifactId>ecwm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ecwm-web-app</name>
+	<name>ecwm</name>
 	<description>Edge Complete Water Management</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
+		<azure.version>2.3.1</azure.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-batch</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jersey</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -48,30 +30,28 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.session</groupId>
-			<artifactId>spring-session-core</artifactId>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>azure-active-directory-spring-boot-starter</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-client</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-jose</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.batch</groupId>
-			<artifactId>spring-batch-test</artifactId>
-			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -79,6 +59,18 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-spring-boot-bom</artifactId>
+				<version>${azure.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -88,36 +80,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</repository>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
 
 </project>
